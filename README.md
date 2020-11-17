@@ -1,0 +1,2 @@
+- Copy File to Src
+- Run: node index.js {FileSrc}.csv {FileExport}.csv
