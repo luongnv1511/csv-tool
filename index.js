@@ -19,7 +19,7 @@ const writeStreamFile = (stream, fileName) => {
 
 (async () => {
   let row = 1;
-  const writer = csvWriter({ sendHeaders: false });
+  const writer = csvWriter({ sendHeaders: false, separator: "\t" });
   writer.write({
     id: "id",
     title: "title",
