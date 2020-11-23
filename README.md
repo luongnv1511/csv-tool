@@ -1,2 +1,2 @@
-- Copy File to Src
-- Run: node index.js {FileSrc}.csv {FileExport}.csv
+- Copy File to src
+- Run: `node index.js <file_input> <file_output> <brand>`
