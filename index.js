@@ -19,7 +19,11 @@ const writeStreamFile = (stream, fileName) => {
 
 (async () => {
   let row = 1;
-  const writer = csvWriter({ sendHeaders: false, separator: "\t" });
+  const writer = csvWriter({
+    sendHeaders: false,
+    separator: "\t",
+    newline: "\r\n",
+  });
   writer.write({
     id: "id",
     title: "title",
@@ -51,6 +55,11 @@ const writeStreamFile = (stream, fileName) => {
       if (data.id) {
         data.mpn = data.id;
         if (!data.price) return;
+        for (const k in data) {
+          if (typeof data[k] == "string") {
+            data[k] = data[k].replace(/\n/g, "\r\n");
+          }
+        }
         data.price = Number(data.price.match(/\d*.\d*/)[0]).toFixed(2);
         if (data.sale_price) {
           data.sale_price = Number(data.sale_price.match(/\d*.\d*/)[0]).toFixed(
