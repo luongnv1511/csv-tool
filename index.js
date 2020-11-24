@@ -29,6 +29,7 @@ const writeStreamFile = (stream, fileName) => {
     description: "description",
     image_link: "image_link",
     mpn: "mpn",
+    gtin: "gtin",
     availability: "availability",
     condition: "condition",
     product_type: "product_type",
