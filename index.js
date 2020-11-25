@@ -54,6 +54,7 @@ const writeStreamFile = (stream, fileName) => {
     .on("data", (data) => {
       if (data.id) {
         data.mpn = data.id;
+        data.description = data.description.replace(/\n/g, " ");
         if (!data.price) return;
         for (const k in data) {
           if (typeof data[k] == "string") {
@@ -66,7 +67,6 @@ const writeStreamFile = (stream, fileName) => {
             2
           );
         }
-        data.description = data.description.replace(/\n/g, " ");
         data.brand = brand;
         console.log("Row number: ", row);
         row++;
