@@ -66,7 +66,7 @@ const writeStreamFile = (stream, fileName) => {
             2
           );
         }
-        data.description = data.description.replace(/\n/g, ", ");
+        data.description = data.description.replace(/\n/g, " ");
         data.brand = brand;
         console.log("Row number: ", row);
         row++;
